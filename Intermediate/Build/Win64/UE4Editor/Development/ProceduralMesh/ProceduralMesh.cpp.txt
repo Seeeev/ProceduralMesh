@@ -1,0 +1,2 @@
+C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\Definitions.ProceduralMesh.h
+C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Source\ProceduralMesh\ProceduralMesh.h

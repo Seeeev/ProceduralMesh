@@ -1,0 +1,20 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-ProceduralMesh.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\ProceduralMeshEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\IcosahedronSphere.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\ProceduralTriangle.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\ProceduralMesh.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\ProceduralMeshGameModeBase.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\IcosahedronSphere.gen.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\ProceduralMesh.init.gen.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\ProceduralMeshGameModeBase.gen.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\ProceduralTriangle.gen.cpp.obj"
+"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\Default.rc2.res"
+/OUT:"C:\Users\Seven\Documents\Unreal Projects\ProceduralMesh\Intermediate\Build\Win64\UE4Editor\Development\ProceduralMesh\UE4Editor-ProceduralMesh.lib"
+/INCLUDE:IMPLEMENT_MODULE_ProceduralMesh

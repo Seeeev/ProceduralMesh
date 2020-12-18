@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\Seven\\Documents\\Unreal Projects\\ProceduralMesh\\Source\\ProceduralMesh\\ProceduralMesh.Build.cs",
+		"C:\\Users\\Seven\\Documents\\Unreal Projects\\ProceduralMesh\\Source\\ProceduralMesh.Target.cs",
+		"C:\\Users\\Seven\\Documents\\Unreal Projects\\ProceduralMesh\\Source\\ProceduralMeshEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.4"
+}

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ProceduralMesh.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{D18EB6C8-4A3A-4714-8AF4-D125B0FCD995}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ProceduralMesh.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ProceduralMeshEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{C24D48F1-EDDC-4114-A006-6A9C32799D5E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ProceduralMesh">
+      <UniqueIdentifier>{377BC990-4166-4AAB-A6ED-01060092C667}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ProceduralMesh\ProceduralMesh.Build.cs">
+      <Filter>Source\ProceduralMesh</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ProceduralMesh\ProceduralMesh.cpp">
+      <Filter>Source\ProceduralMesh</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ProceduralMesh\ProceduralMesh.h">
+      <Filter>Source\ProceduralMesh</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ProceduralMesh\ProceduralMeshGameModeBase.cpp">
+      <Filter>Source\ProceduralMesh</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ProceduralMesh\ProceduralMeshGameModeBase.h">
+      <Filter>Source\ProceduralMesh</Filter>
+    </ClInclude>
+    <Filter Include="Source\ProceduralMesh\Private">
+      <UniqueIdentifier>{6C481321-7C8D-4A89-BD00-BB04DF0EF864}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ProceduralMesh\Private\IcosahedronSphere.cpp">
+      <Filter>Source\ProceduralMesh\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProceduralMesh\Private\ProceduralTriangle.cpp">
+      <Filter>Source\ProceduralMesh\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\ProceduralMesh\Public">
+      <UniqueIdentifier>{10529F3C-C60E-4800-8510-78D028D7C7F1}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\ProceduralMesh\Public\IcosahedronSphere.h">
+      <Filter>Source\ProceduralMesh\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProceduralMesh\Public\ProceduralTriangle.h">
+      <Filter>Source\ProceduralMesh\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

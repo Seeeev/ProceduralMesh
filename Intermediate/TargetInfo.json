@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ProceduralMesh",
+			"Path": "C:\\Users\\Seven\\Documents\\Unreal Projects\\ProceduralMesh\\Source\\ProceduralMesh.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ProceduralMeshEditor",
+			"Path": "C:\\Users\\Seven\\Documents\\Unreal Projects\\ProceduralMesh\\Source\\ProceduralMeshEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
