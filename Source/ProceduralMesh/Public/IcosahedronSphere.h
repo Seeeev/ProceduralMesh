@@ -78,8 +78,20 @@ public:
 	int i_ca;
 
 	// inputs for icosahedron
-	float X = 50;
-	float Z = 50;
+	float X;
+	float Z;
+
+	TArray<FVector> NormalizeVertices(TArray<FVector> veritices);
+	
+	float vertexMagnitude;
+
+	
+	// Scale the Icosahedron
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
+		float Scale;
+
+	
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

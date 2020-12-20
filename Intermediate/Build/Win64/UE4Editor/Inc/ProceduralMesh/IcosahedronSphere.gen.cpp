@@ -35,6 +35,10 @@ void EmptyLinkFunctionForGeneratedCodeIcosahedronSphere() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Scale_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Scale;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Recursions_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Recursions;
@@ -86,6 +90,15 @@ void EmptyLinkFunctionForGeneratedCodeIcosahedronSphere() {}
 		{ "ModuleRelativePath", "Public/IcosahedronSphere.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Scale_MetaData[] = {
+		{ "Category", "Defaults" },
+		{ "Comment", "// Scale the Icosahedron\n" },
+		{ "ModuleRelativePath", "Public/IcosahedronSphere.h" },
+		{ "ToolTip", "Scale the Icosahedron" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Scale = { "Scale", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AIcosahedronSphere, Scale), METADATA_PARAMS(Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Scale_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Scale_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Recursions_MetaData[] = {
 		{ "Category", "Defaults" },
@@ -156,6 +169,7 @@ void EmptyLinkFunctionForGeneratedCodeIcosahedronSphere() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_TerrainMesh = { "TerrainMesh", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AIcosahedronSphere, TerrainMesh), Z_Construct_UClass_UProceduralMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_TerrainMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_TerrainMesh_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AIcosahedronSphere_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Scale,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Recursions,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Vertices_New,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AIcosahedronSphere_Statics::NewProp_Vertices_New_Inner,
@@ -198,7 +212,7 @@ void EmptyLinkFunctionForGeneratedCodeIcosahedronSphere() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AIcosahedronSphere, 1645397703);
+	IMPLEMENT_CLASS(AIcosahedronSphere, 1474030179);
 	template<> PROCEDURALMESH_API UClass* StaticClass<AIcosahedronSphere>()
 	{
 		return AIcosahedronSphere::StaticClass();

@@ -2,6 +2,7 @@
 
 
 #include "IcosahedronSphere.h"
+#include "KismetMathLibrary.generated.h"
 
 // Sets default values
 AIcosahedronSphere::AIcosahedronSphere()
@@ -18,25 +19,23 @@ AIcosahedronSphere::AIcosahedronSphere()
 	Index_A = 0;
 	Index_B = 1;
 	Index_C = 2;
-}
+	X = 0.525731112119133606f;
+	Z = 0.525731112119133606f;
 
-void AIcosahedronSphere::GenerateMesh()
-{
-	Vertices = { 
-	            FVector(-X, 0, Z),
-				FVector(X, 0, Z),
-				FVector(-X, 0, -Z),
-				FVector(X, 0, -Z),
-				FVector(0, Z, X),
-				FVector(0, Z, -X),
-				FVector(0, -Z, X),
-				FVector(0, -Z, -X),
-				FVector(Z, X, 0),
-				FVector(-Z, X, 0),
-				FVector(Z, -X, 0),
-				FVector(-Z, -X, 0) };
+	Vertices = {
+			FVector(-X, 0, Z),
+			FVector(X, 0, Z),
+			FVector(-X, 0, -Z),
+			FVector(X, 0, -Z),
+			FVector(0, Z, X),
+			FVector(0, Z, -X),
+			FVector(0, -Z, X),
+			FVector(0, -Z, -X),
+			FVector(Z, X, 0),
+			FVector(-Z, X, 0),
+			FVector(Z, -X, 0),
+			FVector(-Z, -X, 0) };
 
-	
 	Triangles = { 0,4,1,
 				0,9,4,
 				9,5,4,
@@ -57,6 +56,19 @@ void AIcosahedronSphere::GenerateMesh()
 				9,11,2,
 				9,2,5,
 				7,2,11 };
+	
+	// Default scale of sphere
+	Scale = 100;
+}
+
+void AIcosahedronSphere::GenerateMesh()
+{
+	
+	for(int i = 0; i< Vertices.Num(); i++)
+	{
+		Vertices[i] *= Scale;
+	}
+	
 	TerrainMesh->CreateMeshSection(0, Vertices, Triangles, Normals, UV0, VertexColors, Tangents, true);
 
 	/* Vertices_New is the blank list to where new vertex arrangement will be written to..
@@ -92,7 +104,18 @@ void AIcosahedronSphere::GenerateMesh()
 			VertexDictionary.Empty();
 			IndicesDictionary.Empty();
 		}
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString(FString::FromInt(Vertices.Num())));
 
+		// This function pushes vertices at the surface of a sphere to look like it
+		Vertices = NormalizeVertices(Vertices);
+
+		// rescale the sphere
+		for (int i = 0; i < Vertices.Num(); i++)
+		{
+			Vertices[i] *= Scale;
+		}
+		
 		TerrainMesh->CreateMeshSection(0, Vertices, Triangles, Normals, UV0, VertexColors, Tangents, true);
 	}
 }
@@ -195,14 +218,31 @@ void AIcosahedronSphere::Subdivide(int a, int b, int c)
 
 }
 
+TArray<FVector> AIcosahedronSphere::NormalizeVertices(TArray<FVector> vertices)
+{
+	for (int i = 0; i < vertices.Num(); i++)
+	{
+		// get the magnitude of a vector
+		vertexMagnitude = vertices[i].Size();
+
+		// normalize
+		if (!vertices[i].Normalize())
+		{
+			vertices[i].X /= vertexMagnitude;
+			vertices[i].Y /= vertexMagnitude;
+			vertices[i].Z /= vertexMagnitude;
+		}
+	}
+
+	return vertices;
+}
+
 // Called when the game starts or when spawned
 void AIcosahedronSphere::BeginPlay()
 {
 	Super::BeginPlay();
 
 	GenerateMesh();
-
-
 }
 
 
