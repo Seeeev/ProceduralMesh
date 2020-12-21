@@ -2,6 +2,7 @@
 
 
 #include "IcosahedronSphere.h"
+#include "Math/UnrealMathUtility.h"
 #include "KismetMathLibrary.generated.h"
 
 // Sets default values
@@ -34,7 +35,21 @@ AIcosahedronSphere::AIcosahedronSphere()
 			FVector(Z, X, 0),
 			FVector(-Z, X, 0),
 			FVector(Z, -X, 0),
-			FVector(-Z, -X, 0) };
+			FVector(-Z, -X, 0)
+
+		/*FVector(-X,0,Z),
+		FVector(X,0,Z),
+		FVector(-X,0,-Z),
+		FVector(X,0,-Z),
+		FVector(0,Z,X),
+		FVector(0,Z,-X),
+		FVector(0,-Z,X),
+		FVector(0,-Z,-X),
+		FVector(Z,X,0),
+		FVector(-Z,X, 0),
+		FVector(Z,-X,0),
+		FVector(-Z,-X, 0)*/
+	};
 
 	Triangles = { 0,4,1,
 				0,9,4,
@@ -110,9 +125,12 @@ void AIcosahedronSphere::GenerateMesh()
 		// This function pushes vertices at the surface of a sphere to look like it
 		Vertices = NormalizeVertices(Vertices);
 
+
 		// rescale the sphere
 		for (int i = 0; i < Vertices.Num(); i++)
 		{
+			//PerlinNoise3D(Vertices[i]);
+			//UE_LOG(LogTemp, Warning, TEXT("Hello"));
 			Vertices[i] *= Scale;
 		}
 		
@@ -242,6 +260,20 @@ void AIcosahedronSphere::BeginPlay()
 {
 	Super::BeginPlay();
 
+	GenerateMesh();
+}
+
+/* Called when an actor is created in the editor or during gameplay,
+this gets called right before construction.*/
+void AIcosahedronSphere::PostActorCreated()
+{
+	Super::PostActorCreated();
+	GenerateMesh();
+}
+
+void AIcosahedronSphere::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+	Super::PostEditChangeProperty(PropertyChangedEvent);
 	GenerateMesh();
 }
 

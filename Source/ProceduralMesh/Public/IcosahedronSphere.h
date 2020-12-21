@@ -21,13 +21,13 @@ public:
 		UProceduralMeshComponent* TerrainMesh;
 
 	// Variables for mesh generation
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
+	UPROPERTY(BlueprintReadWrite,  Category = "Defaults")
 		TArray<FVector> Vertices;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
+	UPROPERTY(BlueprintReadWrite, Category = "Defaults")
 		TArray<int> Triangles;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
+	UPROPERTY(BlueprintReadWrite,  Category = "Defaults")
 		TArray<FVector> Normals;
 
 	//UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
@@ -44,10 +44,10 @@ public:
 	//Mesh generation function
 	void GenerateMesh();
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
+	UPROPERTY(BlueprintReadWrite,  Category = "Defaults")
 		TArray<int> Triangles_New;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Defaults")
+	UPROPERTY(BlueprintReadWrite,  Category = "Defaults")
 		TArray<FVector> Vertices_New;
 
 	// Triangle points a b and c
@@ -95,6 +95,11 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	virtual void PostActorCreated() override;
+	//void PostEditChangeProperty(FPropertyChangedChainEvent& e);
+
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 
 public:	
 	// Called every frame
